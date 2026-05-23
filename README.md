@@ -2,6 +2,11 @@
 
 A Windows desktop overlay that lets you fire defined prompts templates at any AI provider — with optional screenshot context — from anywhere, via a global hotkey.
 
+## Showcase
+
+https://github.com/user-attachments/assets/2535b74d-8c39-451b-b9e3-8eec3bc46b41
+
+
 ## Requirements
 
 - **Windows 10 / 11** (global hotkeys + tray; untested on other OSes).

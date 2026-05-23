@@ -1,0 +1,114 @@
+provider: gemini
+model: gemini-2.5-flash
+hotkeys:
+  summon_overlay: Ctrl+Alt+Space
+  open_settings: Ctrl+Alt+,
+  send_prompt: Ctrl+Return
+  next_template: Ctrl+Alt+Right
+  prev_template: Ctrl+Alt+Left
+logging:
+  enabled: true
+  level: INFO
+memory:
+  enabled: false
+  backend: local
+  model: all-MiniLM-L6-v2
+  top_k: 3
+  local_offline_mode: false
+framed_window: false
+window_width: 750
+window_height: 700
+chat_style:
+  font_family: ''
+  font_size: 12
+  turn_spacing: 20
+  user_align: right
+  assistant_align: left
+  show_labels: true
+  user_bg_mode: headers
+  user_bg_color: '#4a7dff'
+  assistant_bg_mode: headers
+  assistant_bg_color: '#888888'
+  autoscroll_tolerance: 12
+templates:
+- name: General
+  text: '{prompt}'
+  include_screenshot: false
+  use_memory: false
+  hotkey: ''
+  variables:
+  - name: prompt
+    prefix: ''
+    suffix: ''
+    default: ''
+    default_on: true
+- name: Explain Screenshot
+  text: Look at this screenshot and explain what you see. {focus}
+  include_screenshot: true
+  use_memory: false
+  hotkey: ''
+  variables:
+  - name: focus
+    prefix: 'Focus on '
+    suffix: .
+    default: text you see
+    default_on: true
+- name: Explain Code
+  text: Explain this code for a {level} developer. Focus on {aspect}.
+  include_screenshot: true
+  variables: null
+- name: Rewrite Text
+  text: 'Rewrite the following text to sound more {tone}: {text}, {text2}, {text3}'
+  include_screenshot: false
+  use_memory: false
+  hotkey: ''
+  variables:
+  - name: tone
+    prefix: ''
+    suffix: ''
+    default: ''
+    default_on: true
+  - name: text
+    prefix: ''
+    suffix: ''
+    default: ''
+    default_on: true
+  - name: text2
+    prefix: ''
+    suffix: ''
+    default: ''
+    default_on: true
+  - name: text3
+    prefix: ''
+    suffix: ''
+    default: ''
+    default_on: true
+- name: Game Hero Selection Analysis
+  text: 'I''m looking at a game hero selection screen. The game mode is {game_mode},
+    and I need help {task_focus}{current_role_info}{viewing_details}
+
+
+    What heroes would you recommend for this situation?'
+  include_screenshot: true
+  use_memory: true
+  variables:
+  - name: game_mode
+    prefix: ''
+    suffix: ''
+    default: Turbo
+    default_on: true
+  - name: task_focus
+    prefix: ''
+    suffix: ''
+    default: choosing the right hero for PINK slot
+    default_on: true
+  - name: current_role_info
+    prefix: ' '
+    suffix: ''
+    default: and I'm considering roles like Support
+    default_on: true
+  - name: viewing_details
+    prefix: ' '
+    suffix: ''
+    default: 'with some heroes picked: '
+    default_on: false

@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+conversations.json
+chroma.sqlite3
+settings/memory
+Plan.md

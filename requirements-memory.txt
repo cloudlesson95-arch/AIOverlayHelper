@@ -1,0 +1,7 @@
+# Optional deps for the memory / RAG feature.
+# Install with: pip install -r requirements-memory.txt
+#
+# chromadb         — vector store, always required when memory is enabled
+# sentence-transformers — only needed for backend: local
+chromadb>=0.5
+sentence-transformers>=3.0
